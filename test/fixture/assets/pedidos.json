@@ -1,0 +1,95 @@
+[
+  {
+    "id": 101,
+    "idUsuario": "815f250d-6101-46ed-8671-a6e6b2dff832",
+    "data": "2024-03-10T14:30:00Z",
+    "status": "Em processamento",
+    "itens": [
+      {
+        "produto": "Notebook",
+        "quantidade": 1,
+        "preco_unitario": 4500.99,
+        "subtotal": 4500.99
+      },
+      {
+        "produto": "Mouse",
+        "quantidade": 1,
+        "preco_unitario": 150.75,
+        "subtotal": 150.75
+      }
+    ],
+    "total": 4651.74,
+    "forma_pagamento": {
+      "tipo": "Cartão de Crédito",
+      "parcelas": 10,
+      "bandeira": "Visa",
+      "ultima_quatro": "1234"
+    },
+    "endereco_entrega": {
+      "rua": "Av. das Flores",
+      "numero": 123,
+      "bairro": "Centro",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "cep": "01010-000"
+    },
+    "historico_status": [
+      {
+        "status": "Pedido realizado",
+        "data": "2024-03-10T14:00:00Z"
+      },
+      {
+        "status": "Pagamento aprovado",
+        "data": "2024-03-10T14:15:00Z"
+      },
+      {
+        "status": "Em processamento",
+        "data": "2024-03-10T14:30:00Z"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "data": "2024-03-08T10:15:00Z",
+    "status": "Entregue",
+    "itens": [
+      {
+        "produto": "Teclado Mecânico",
+        "quantidade": 1,
+        "preco_unitario": 350.00,
+        "subtotal": 350.00
+      }
+    ],
+    "total": 350.00,
+    "forma_pagamento": {
+      "tipo": "Pix",
+      "chave": "joao@email.com"
+    },
+    "endereco_entrega": {
+      "rua": "Av. das Flores",
+      "numero": 123,
+      "bairro": "Centro",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "cep": "01010-000"
+    },
+    "historico_status": [
+      {
+        "status": "Pedido realizado",
+        "data": "2024-03-08T09:50:00Z"
+      },
+      {
+        "status": "Pagamento aprovado",
+        "data": "2024-03-08T10:00:00Z"
+      },
+      {
+        "status": "Enviado",
+        "data": "2024-03-08T12:30:00Z"
+      },
+      {
+        "status": "Entregue",
+        "data": "2024-03-09T15:00:00Z"
+      }
+    ]
+  }
+]

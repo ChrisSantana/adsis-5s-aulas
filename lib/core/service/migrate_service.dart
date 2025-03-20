@@ -1,5 +1,8 @@
 ﻿import 'dart:async';
+
+import 'package:order_manager/configs/data_base_schema_helper.dart';
 import 'package:order_manager/core/library/extensions.dart' show ParsingStringList;
+import 'package:order_manager/domain/entities/user/user_entity.dart';
 import 'package:sqflite/sqflite.dart';
 
 export 'package:sqflite/sqflite.dart' show Database, ConflictAlgorithm, Batch;
@@ -64,11 +67,25 @@ final class MigrateService implements IMigrateService {
   }
 
   @override
-  Future<void> onCreate(Database db, int _) async {}
+  Future<void> onCreate(Database db, int _) async {
+    await _createTableUsuario(db);
+  }
 
   @override
   Future<void> onUpgrade(Database db, int oldVersion, int newVersion) async {
     if (newVersion > oldVersion) {}
+  }
+
+  Future<void> _createTableUsuario(Database db) async {
+    await db.execute(
+      '''
+      CREATE TABLE IF NOT EXISTS ${DataBaseSchemaHelper.kUser} (
+      ${UserEntity.kKeyId} $kTypeText,
+      ${UserEntity.kKeyName} $kTypeText,
+      ${UserEntity.kKeyEmail} $kTypeText,
+      ${UserEntity.kKeyAddress} $kTypeText)
+       ''',
+    );
   }
 
   @override

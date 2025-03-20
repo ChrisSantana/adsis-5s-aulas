@@ -93,7 +93,7 @@ final class HttpService implements IHttpService {
   }
 }
 
-final class HttpClientFactory {
+final class HttpServiceFactory {
   IHttpService create() {
     return HttpService(
       Dio(

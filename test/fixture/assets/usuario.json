@@ -1,0 +1,13 @@
+{
+  "id": "815f250d-6101-46ed-8671-a6e6b2dff832",
+  "nome": "Usuario Teste",
+  "email": "test@email.com",
+  "endereco": {
+    "rua": "Av. da univesidade",
+    "numero": "123",
+    "bairro": "Centro",
+    "cidade": "Maringa",
+    "estado": "PR",
+    "cep": "01010-000"
+  }
+}

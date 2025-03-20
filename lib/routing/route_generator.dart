@@ -1,17 +1,12 @@
 ﻿import 'package:flutter/material.dart';
 import 'package:order_manager/configs/injection_container.dart';
 import 'package:order_manager/core/service/app_service.dart';
+import 'package:order_manager/ui/user/pages/user_page.dart';
 
 final class RouteGeneratorHelper {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     return switch (settings.name) {
-      kInitial => createRoutePage(
-        Scaffold(
-          body: Center(
-            child: Text('Hello World!'),
-          ),
-        ),
-      ),
+      kInitial => createRoutePage(const UserPage()),
       _ => createRouteError(),
     };
   }

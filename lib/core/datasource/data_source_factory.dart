@@ -34,10 +34,9 @@ final class RelationalFactoryDataSource {
 
 final class RemoteFactoryDataSource {
   IRemoteDataSource create() {
-    final IHttpService httpService = getIt<IHttpService>();
+    final IHttpService httpService = HttpServiceFactory().create();
     final IEnvironmentHelper environmentHelper = getIt<IEnvironmentHelper>();
     final IClockHelper clockHelper = ClockHelper();
-
     return RemoteDataSource(
       httpService, 
       environmentHelper, 
