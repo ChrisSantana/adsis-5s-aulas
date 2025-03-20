@@ -1,1 +1,18 @@
 include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    always_declare_return_types: error
+    unnecessary_new: error
+
+linter:
+  rules:
+    avoid_slow_async_io: true
+    always_use_package_imports: true
+    always_declare_return_types: true
+    avoid_unused_constructor_parameters: true
+    prefer_single_quotes: true
+    prefer_final_fields: true
+    prefer_final_locals: true
+    unnecessary_new: true
+    use_build_context_synchronously: true
