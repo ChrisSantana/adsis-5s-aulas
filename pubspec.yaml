@@ -1,5 +1,5 @@
 name: order_manager
-description: "A new Flutter project."
+description: "A new Flutter project example with MVVM archicteture"
 publish_to: 'none'
 version: 0.1.0
 
@@ -9,11 +9,38 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # A dart package that helps implement the BLoC pattern
+  bloc: 9.0.0
+  # Functions helpful to iterables
+  collection: 1.19.1
+  # HTTP client
+  dio: 5.8.0+1
+  # Widgets that make it easy to integrate blocs and cubits
+  flutter_bloc: 9.0.0
+  # Provide environment variables
+  flutter_dotenv: 5.2.1
+  # Icons Gallery
+  font_awesome_flutter: 10.8.0
+  # DI and IoC singleton
+  get_it: 8.0.3
+  # Internationalization
+  intl: 0.19.0
+  # Storage with key and value
+  shared_preferences: 2.5.2
+  # Relational data base
+  sqflite: 2.4.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+
+  # Analysis of good code practices
+  flutter_lints: 5.0.0
+  # Objects mocks - Essential for unit testing
+  mockito: 5.4.5
 
 flutter:
   uses-material-design: true
