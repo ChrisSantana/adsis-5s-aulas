@@ -1,6 +1,9 @@
-# Order Manager
+# MVVM Example
 
-Order Manager is a Flutter project demonstrating the MVVM architecture with Bloc for state management. The app features user authentication, profile management, order tracking, and integration with RESTful APIs. It is structured to maintain a clean and scalable architecture.
+MVVM Example is a Flutter project demonstrating the MVVM architecture with Bloc for state management. The app features user authentication, profile management, order tracking, and integration with RESTful APIs. It is structured to maintain a clean and scalable architecture.
+
+![image](https://github.com/user-attachments/assets/20824875-060a-4626-ae09-9db98375cdf7)
+
 
 ## Features
 - **User Authentication**
