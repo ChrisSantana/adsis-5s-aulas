@@ -1,24 +1,14 @@
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-
 abstract interface class IEnvironmentHelper {
   String? get urlUserInformation;
-  String? get urlOrderInformation;
+  String? get urlClients;
 }
 
 final class EnvironmentHelper implements IEnvironmentHelper {
-  final DotEnv _dotEnv;
-  const EnvironmentHelper(this._dotEnv);
+  const EnvironmentHelper();
 
   @override
-  String get urlUserInformation => _fetchValueFromEnv('URL_USER_INFORMATION');
+  String get urlUserInformation => 'https://127.0.0.1/user_information';
 
   @override
-  String get urlOrderInformation => _fetchValueFromEnv('URL_ORDER_INFORMATION');
-
-  String _fetchValueFromEnv(String envPropertyName) {
-    try {
-      return _dotEnv.env[envPropertyName] ?? '';
-    } catch (_) {}
-    return '';
-  }
+  String get urlClients => 'https://127.0.0.1/clients';
 }

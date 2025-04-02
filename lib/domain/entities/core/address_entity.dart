@@ -1,4 +1,3 @@
-
 final class AddressEntity {
   final String street;
   final String number;

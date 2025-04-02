@@ -5,9 +5,6 @@
   static const String extensionPDF = 'pdf';
   static const String directoryMedia = 'media';
 
-  /// #region Env
-  static const String envProd = '.env';
-
   /// #region Internationalization
   static const String kLanguageCode = 'pt';
   static const String kCountryCode = 'BR';

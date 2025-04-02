@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:order_manager/ui/user/view_models/user_viewmodel.dart';
 
-class UsuarioOptionWidget extends StatelessWidget {
-  const UsuarioOptionWidget({super.key});
+class UserOptionWidget extends StatelessWidget {
+  const UserOptionWidget({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final UserViewModel userViewModel = context.read<UserViewModel>();
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -17,6 +22,7 @@ class UsuarioOptionWidget extends StatelessWidget {
         _OptionTile(
           icon: FontAwesomeIcons.mapLocationDot, 
           title: 'Localização',
+          onTap: userViewModel.onTapLocation,
         ),
         Divider(),
         _OptionTile(
@@ -33,11 +39,13 @@ class _OptionTile extends StatelessWidget {
   final IconData icon;
   final String title;
   final Color? iconColor;
+  final VoidCallback? onTap;
 
   const _OptionTile({
     required this.icon,
     required this.title,
     this.iconColor,
+    this.onTap,
   });
 
   @override
@@ -45,7 +53,7 @@ class _OptionTile extends StatelessWidget {
     return SizedBox(
       height: 40,
       child: InkWell(
-        onTap: () {},
+        onTap: onTap,
         child: Row(
           mainAxisSize: MainAxisSize.max,
           children: [

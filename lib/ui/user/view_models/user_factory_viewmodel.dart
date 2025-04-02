@@ -1,5 +1,5 @@
 import 'package:order_manager/configs/factory_viewmodel.dart';
-import 'package:order_manager/core/datasource/data_source_factory.dart';
+import 'package:order_manager/data/datasources/core/data_source_factory.dart';
 import 'package:order_manager/data/repositories/user/user_repository.dart';
 import 'package:order_manager/ui/user/view_models/user_viewmodel.dart';
 

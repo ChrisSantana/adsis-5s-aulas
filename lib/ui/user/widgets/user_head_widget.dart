@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:order_manager/domain/entities/user/user_entity.dart';
 
-class UsuarioHeadWidget extends StatelessWidget {
-  final UserEntity usuario;
+class UserHeadWidget extends StatelessWidget {
+  final UserEntity user;
   
-  const UsuarioHeadWidget({
+  const UserHeadWidget({
     super.key, 
-    required this.usuario,
+    required this.user,
   });
 
   @override
@@ -28,8 +28,8 @@ class UsuarioHeadWidget extends StatelessWidget {
               size: 114,
             ),
           ),
-          _UsuarioInformationWidget(
-            usuario: usuario,
+          _UserInformationWidget(
+            user: user,
           ),
         ],
       ),
@@ -37,11 +37,11 @@ class UsuarioHeadWidget extends StatelessWidget {
   }
 }
 
-class _UsuarioInformationWidget extends StatelessWidget {
-  final UserEntity usuario;
+class _UserInformationWidget extends StatelessWidget {
+  final UserEntity user;
 
-  const _UsuarioInformationWidget({
-    required this.usuario,
+  const _UserInformationWidget({
+    required this.user,
   });
 
   @override
@@ -51,7 +51,7 @@ class _UsuarioInformationWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          usuario.name,
+          user.name,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 18,
@@ -60,7 +60,7 @@ class _UsuarioInformationWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(bottom: 16),
           child: Text(
-            usuario.email,
+            user.email,
             style: TextStyle(
               fontWeight: FontWeight.bold,
             ),

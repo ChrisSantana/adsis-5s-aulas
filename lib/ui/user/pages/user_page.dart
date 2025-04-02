@@ -1,12 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:order_manager/configs/factory_viewmodel.dart';
-import 'package:order_manager/core/entity/request_state_entity.dart';
+import 'package:order_manager/domain/entities/core/request_state_entity.dart';
 import 'package:order_manager/core/widgets/progress_indicator_widget.dart';
 import 'package:order_manager/domain/entities/user/user_entity.dart';
 import 'package:order_manager/ui/user/view_models/user_factory_viewmodel.dart';
 import 'package:order_manager/ui/user/view_models/user_viewmodel.dart';
-import 'package:order_manager/ui/user/widgets/usuario_head_widget.dart';
-import 'package:order_manager/ui/user/widgets/usuario_option_widget.dart';
+import 'package:order_manager/ui/user/widgets/user_head_widget.dart';
+import 'package:order_manager/ui/user/widgets/user_option_widget.dart';
 
 class UserPage extends StatelessWidget {
   const UserPage({super.key});
@@ -43,18 +43,18 @@ class _UserContentWidget extends StatelessWidget {
           if (state is RequestProcessingState) return Center(child: ProgressIndicatorWidget());
           if (state is RequestErrorState) return _TryAgainWidget();
           
-          final UserEntity? usuario = (state as RequestCompletedState<UserEntity>).value;
-          if (usuario == null) _TryAgainWidget();
+          final UserEntity? user = (state as RequestCompletedState<UserEntity>).value;
+          if (user == null) _TryAgainWidget();
 
           return RefreshIndicator.adaptive(
             onRefresh: context.read<UserViewModel>().onRefreshIndicator,
             child: ListView(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               children: [
-                UsuarioHeadWidget(
-                  usuario: usuario!
+                UserHeadWidget(
+                  user: user!
                 ),
-                UsuarioOptionWidget(),
+                UserOptionWidget(),
               ],
             ),
           );

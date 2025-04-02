@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:order_manager/configs/data_base_schema_helper.dart';
 import 'package:order_manager/configs/environment_helper.dart';
-import 'package:order_manager/core/datasource/data_source.dart';
-import 'package:order_manager/core/entity/http_response_entity.dart';
+import 'package:order_manager/data/datasources/core/data_source.dart';
+import 'package:order_manager/domain/entities/core/http_response_entity.dart';
 import 'package:order_manager/core/library/constants.dart';
 import 'package:order_manager/data/repositories/user/user_repository.dart';
 import 'package:order_manager/domain/entities/user/user_entity.dart';
@@ -23,8 +23,8 @@ void main() {
     tEnvironment = MockEnvironment();
     tRemoteDataSource = MockRemoteDataSource();
     tRelationalDataSource = MockRelationalDataSource();
-    tUsuario = FixtureHelper.fetchUsuario();
-    tUsuarioMap = FixtureHelper.fetchUsuarioRemoteMap();
+    tUsuario = FixtureHelper.fetchUser();
+    tUsuarioMap = FixtureHelper.fetchUserRemoteMap();
     tUrl = FixtureHelper.url;
     tUsuarioRepository = UserRepository(tRemoteDataSource, tRelationalDataSource);
   });

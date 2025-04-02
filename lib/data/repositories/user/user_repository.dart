@@ -1,9 +1,9 @@
 import 'package:order_manager/configs/data_base_schema_helper.dart';
-import 'package:order_manager/core/datasource/data_source.dart';
-import 'package:order_manager/core/entity/http_response_entity.dart';
+import 'package:order_manager/data/datasources/core/data_source.dart';
+import 'package:order_manager/domain/entities/core/http_response_entity.dart';
 import 'package:order_manager/core/library/extensions.dart';
 import 'package:order_manager/domain/entities/user/user_entity.dart';
-import 'package:order_manager/domain/error/usuario/usuario_exception.dart';
+import 'package:order_manager/domain/error/user/user_exception.dart';
 
 abstract interface class IUserRepository {
   Future<UserEntity> fetchFromApiAsync();
@@ -20,17 +20,17 @@ final class UserRepository implements IUserRepository {
 
     final HttpResponseEntity httpResponse = await _remoteDataSource.get(_urlFetchUser)!;
     
-    if (!httpResponse.toBool()) throw UsuarioNotFoundException();
+    if (!httpResponse.toBool()) throw UserNotFoundException();
 
-    final UserEntity usuario = UserEntity.fromRemoteMap(httpResponse.data as Map<String, dynamic>);
-    await _saveAtStorageAsync(usuario);
+    final UserEntity user = UserEntity.fromRemoteMap(httpResponse.data as Map<String, dynamic>);
+    await _saveAtStorageAsync(user);
     
-    return usuario;
+    return user;
   }
 
-  Future<bool> _saveAtStorageAsync(UserEntity usuario) async {
-    await _deleteUsuarioAtStorageAsync(usuario.id);
-    return await _relationalDataSource.insert(DataBaseSchemaHelper.kUser, usuario.toMap())!;
+  Future<bool> _saveAtStorageAsync(UserEntity user) async {
+    await _deleteUsuarioAtStorageAsync(user.id);
+    return await _relationalDataSource.insert(DataBaseSchemaHelper.kUser, user.toMap())!;
   }
 
   Future<bool> _deleteUsuarioAtStorageAsync(String userId) {

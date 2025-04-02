@@ -6,6 +6,7 @@ import 'package:order_manager/routing/route_generator.dart';
 import 'package:order_manager/utils/util.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await injector.init();
   runApp(const MainApp());
 }

@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:order_manager/domain/entities/core/address_entity.dart';
+import 'package:order_manager/domain/entities/core/location_entity.dart';
 import 'package:order_manager/domain/entities/user/user_entity.dart';
 
 import '../../fixture/library/fixture_helper.dart';
@@ -7,17 +8,19 @@ import '../../fixture/library/fixture_helper.dart';
 void main() {
   test('should valid the entity', () {
     // Arrange
-    final Map<String, dynamic> usuarioMap = FixtureHelper.fetchUsuarioRemoteMap();
+    final Map<String, dynamic> userMap = FixtureHelper.fetchUserRemoteMap();
 
     // Act
-    final UserEntity usuario = UserEntity.fromRemoteMap(usuarioMap);
-    final Map<String, dynamic> usuarioCopyMap = usuario.toMap();
+    final UserEntity user = UserEntity.fromRemoteMap(userMap);
+    final Map<String, dynamic> userCopyMap = user.toMap();
 
     // Assert
-    expect(usuario.id, isA<String>());
-    expect(usuario.name, isA<String>());
-    expect(usuario.email, isA<String>());
-    expect(usuario.address, isA<AddressEntity>());
-    expect(usuarioCopyMap, isA<Map<String, dynamic>>());
+    expect(user.id, isA<String>());
+    expect(user.name, isA<String>());
+    expect(user.email, isA<String>());
+    expect(user.profileImage, isA<String>());
+    expect(user.location, isA<LocationEntity>());
+    expect(user.address, isA<AddressEntity>());
+    expect(userCopyMap, isA<Map<String, dynamic>>());
   });
 }

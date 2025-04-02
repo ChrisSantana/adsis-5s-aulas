@@ -1,6 +1,6 @@
 import 'package:mockito/mockito.dart';
 import 'package:order_manager/configs/environment_helper.dart';
-import 'package:order_manager/core/datasource/data_source.dart';
+import 'package:order_manager/data/datasources/core/data_source.dart';
 import 'package:order_manager/core/service/app_service.dart';
 import 'package:order_manager/core/service/clock_helper.dart';
 import 'package:order_manager/core/service/http_service.dart';

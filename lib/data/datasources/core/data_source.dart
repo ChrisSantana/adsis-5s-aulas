@@ -1,5 +1,5 @@
 import 'package:order_manager/configs/environment_helper.dart';
-import 'package:order_manager/core/entity/http_response_entity.dart';
+import 'package:order_manager/domain/entities/core/http_response_entity.dart';
 
 abstract interface class IRelationalDataSource {
   Future<bool>? delete(String tableName, {String? where, List<dynamic>? whereArgs});
