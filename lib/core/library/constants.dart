@@ -9,6 +9,13 @@
   static const int kDefaultError = 500;
 }
 
-final class TableRelationalNameConstant {}
+final class LocationConstant {
+  static const int kTimeoutSeconds = 15;
+}
 
-final class TableNoSqlNameConstant {}
+final class MapConfigurationConstant {
+  static const double kLatitudeDefault = -23.42561054632201;
+  static const double kLongitudeDefault = -51.93834256484565;
+  static const double kZoomMinimalMaps = 5;
+  static const double kZoomMaps = 14;
+}

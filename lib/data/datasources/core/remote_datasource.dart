@@ -1,6 +1,6 @@
 import 'package:order_manager/configs/environment_helper.dart';
-import 'package:order_manager/core/datasource/data_source.dart';
-import 'package:order_manager/core/entity/http_response_entity.dart';
+import 'package:order_manager/data/datasources/core/data_source.dart';
+import 'package:order_manager/domain/entities/core/http_response_entity.dart';
 import 'package:order_manager/core/service/clock_helper.dart';
 import 'package:order_manager/core/service/http_service.dart';
 

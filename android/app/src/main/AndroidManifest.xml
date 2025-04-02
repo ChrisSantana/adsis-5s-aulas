@@ -1,8 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="order_manager"
+        android:label="Manager"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="YOUR-MAP-KEY-HERE"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

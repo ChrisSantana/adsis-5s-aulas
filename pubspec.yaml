@@ -24,8 +24,12 @@ dependencies:
   flutter_dotenv: 5.2.1
   # Icons Gallery
   font_awesome_flutter: 10.8.0
+  # Helpful for geolocation
+  geolocator: 13.0.3
   # DI and IoC singleton
   get_it: 8.0.3
+  # Google maps
+  google_maps_flutter: 2.12.0
   # Internationalization
   intl: 0.19.0
   # Storage with key and value
@@ -44,3 +48,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/env/
+    - assets/icon/
+    - assets/maps/

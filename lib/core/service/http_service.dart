@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:order_manager/core/entity/http_response_entity.dart';
+import 'package:order_manager/domain/entities/core/http_response_entity.dart';
 import 'package:order_manager/core/library/extensions.dart';
 
 abstract interface class IHttpService {
@@ -93,7 +93,7 @@ final class HttpService implements IHttpService {
   }
 }
 
-final class HttpClientFactory {
+final class HttpServiceFactory {
   IHttpService create() {
     return HttpService(
       Dio(

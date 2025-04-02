@@ -1,0 +1,19 @@
+{
+  "id": "815f250d-6101-46ed-8671-a6e6b2dff832",
+  "nome": "Usuario Teste",
+  "email": "test@email.com",
+  "fotoPerfil": "https://picsum.photos/id/1025/200/300",
+  "localizacao": {
+    "codigo": "df700126dad7cbd561ac54cfb8c62350",
+    "latitude": -23.4273,
+    "longitude": -51.9375
+  },
+  "endereco": {
+    "rua": "Av. da univesidade",
+    "numero": "123",
+    "bairro": "Centro",
+    "cidade": "Maringa",
+    "estado": "PR",
+    "cep": "01010-000"
+  }
+}
