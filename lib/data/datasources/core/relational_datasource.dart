@@ -1,4 +1,4 @@
-import 'package:order_manager/core/datasource/data_source.dart';
+import 'package:order_manager/data/datasources/core/data_source.dart';
 import 'package:order_manager/core/service/clock_helper.dart';
 import 'package:order_manager/core/service/storage_service.dart';
 

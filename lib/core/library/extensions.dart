@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:order_manager/core/entity/http_response_entity.dart';
-import 'package:order_manager/core/error/http_exception.dart';
+import 'package:order_manager/domain/entities/core/http_response_entity.dart';
+import 'package:order_manager/domain/error/core/http_exception.dart';
 import 'package:order_manager/core/library/constants.dart';
 
 extension NumberParsing on int {

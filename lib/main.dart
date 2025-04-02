@@ -6,6 +6,7 @@ import 'package:order_manager/routing/route_generator.dart';
 import 'package:order_manager/utils/util.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await injector.init();
   runApp(const MainApp());
 }
@@ -16,7 +17,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
