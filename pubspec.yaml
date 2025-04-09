@@ -50,6 +50,5 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/env/
-    - assets/icon/
     - assets/maps/
+    - assets/login/

@@ -9,7 +9,7 @@ import UIKit
   ) -> Bool {
     GeneratedPluginRegistrant.register(with: self)
 
-    GMSServices.provideAPIKey("YOUR-MAP-KEY-HERE")
+    GMSServices.provideAPIKey("AIzaSyC_tn011tDjOe-oCd5p2Ey_5Tl7AK_2ASs")
 
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }

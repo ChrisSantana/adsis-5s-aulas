@@ -1,6 +1,9 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:order_manager/configs/data_base_schema_helper.dart';
+import 'package:order_manager/configs/factory_viewmodel.dart';
+import 'package:order_manager/data/datasources/core/data_source_factory.dart';
 import 'package:order_manager/domain/entities/core/http_response_entity.dart';
 import 'package:order_manager/core/library/extensions.dart';
 
@@ -14,7 +17,12 @@ abstract interface class IHttpService {
 
 final class HttpService implements IHttpService {
   final Dio _dio;
-  const HttpService(this._dio);
+  final INonRelationalDataSource _nonRelationalDataSource;
+
+  const HttpService(
+    this._dio,
+    this._nonRelationalDataSource,
+  );
 
   @override
   Future<HttpResponseEntity> get(String url, {int? secondsTimeout}) async {
@@ -73,7 +81,7 @@ final class HttpService implements IHttpService {
 
   Future<void> _changeDioOptionsAsync() async {
     _dio.options.headers.clear();
-    final String token = await _fetchTokenFromStorageAsync();
+    final String token = (await _fetchTokenFromStorageAsync()) ?? '';
     if (token.isNotEmpty) {
       _dio.options.headers = {
         HttpHeaders.authorizationHeader: 'Bearer $token',
@@ -81,8 +89,8 @@ final class HttpService implements IHttpService {
     }
   }
 
-  Future<String> _fetchTokenFromStorageAsync() {
-    return Future.value('');
+  Future<String?> _fetchTokenFromStorageAsync() {
+    return Future.value(_nonRelationalDataSource.loadString(DataBaseNoSqlSchemaHelper.kUserToken));
   }
 
   HttpResponseEntity _createHttpResponseFromResponse(Response response) {
@@ -103,6 +111,7 @@ final class HttpServiceFactory {
           validateStatus: (value) => value != null,
         ),
       ),
+      NonRelationalFactoryDataSource().create(),
     );
   }
 }
