@@ -8,8 +8,8 @@ final class UserFactoryViewModel implements IFactoryViewModel<UserViewModel> {
   UserViewModel create(BuildContext context) {
     final IRemoteDataSource remoteDataSource = RemoteFactoryDataSource().create();
     final IRelationalDataSource relationalDataSource = RelationalFactoryDataSource().create();
-    final IUserRepository usuarioRepository = UserRepository(remoteDataSource, relationalDataSource);
-    return UserViewModel(usuarioRepository);
+    final IUserRepository userRepository = UserRepository(remoteDataSource, relationalDataSource);
+    return UserViewModel(userRepository);
   }
 
   @override

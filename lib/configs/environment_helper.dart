@@ -1,14 +1,16 @@
 abstract interface class IEnvironmentHelper {
+  String? get urlAuthentication;
   String? get urlUserInformation;
-  String? get urlClients;
 }
 
 final class EnvironmentHelper implements IEnvironmentHelper {
   const EnvironmentHelper();
 
-  @override
-  String get urlUserInformation => 'https://127.0.0.1/user_information';
+  String get _urlBase => 'https://127.0.0.1';
 
   @override
-  String get urlClients => 'https://127.0.0.1/clients';
+  String? get urlAuthentication => '$_urlBase/authentication';
+
+  @override
+  String get urlUserInformation => '$_urlBase/user_information';
 }
