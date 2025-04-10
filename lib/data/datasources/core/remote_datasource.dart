@@ -1,7 +1,4 @@
-import 'dart:math';
-
 import 'package:order_manager/configs/environment_helper.dart';
-import 'package:order_manager/core/library/constants.dart';
 import 'package:order_manager/data/datasources/core/data_source.dart';
 import 'package:order_manager/domain/entities/core/http_response_entity.dart';
 import 'package:order_manager/core/service/clock_helper.dart';
@@ -16,12 +13,7 @@ base class RemoteDataSource implements IRemoteDataSource {
   @override
   Future<HttpResponseEntity> get(String url) async {
     try {
-      await Future.delayed(Duration(seconds: Random().nextInt(5)));
-      return HttpResponseEntity(
-        statusCode: HttpConstant.kSuccess,
-        data: _toMap(),
-      );
-      //return await _http.get(url);
+      return await _http.get(url);
     } catch (_) {
       rethrow;
     }
@@ -68,26 +60,4 @@ base class RemoteDataSource implements IRemoteDataSource {
 
   @override
   DateTime get currentDateTime => _clockHelper.currentDateTime!;
-}
-
-Map<String, dynamic> _toMap() {
-  return {
-    'id': '815f250d-6101-46ed-8671-a6e6b2dff832',
-    'nome': 'Usuario Teste',
-    'email': 'test@email.com',
-    'fotoPerfil': 'https://picsum.photos/id/1025/200/300',
-    'localizacao': {
-      'codigo': 'df700126dad7cbd561ac54cfb8c62350',
-      'latitude': -23.4273,
-      'longitude': -51.9375
-    },
-    'endereco': {
-      'rua': 'Av. da univesidade',
-      'numero': '123',
-      'bairro': 'Centro',
-      'cidade': 'Maringa',
-      'estado': 'PR',
-      'cep': '01010-000'
-    }
-  };
 }
